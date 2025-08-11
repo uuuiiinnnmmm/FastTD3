@@ -1,5 +1,5 @@
 Reproducing FastTD3 on a Laptop with Ubuntu 20.04
-
+====
 This document details the step-by-step process of setting up and running the FastTD3 project on a personal laptop. The process involves navigating several challenges related to NVIDIA drivers, CUDA setup, conflicting Python dependencies from its environment backend humanoid-bench, and resource limitations of a non-server-grade machine.
 
 1. System & Hardware Prerequisites
