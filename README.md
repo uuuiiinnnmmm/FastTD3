@@ -3,7 +3,7 @@ Reproducing FastTD3 on a Laptop with Ubuntu 20.04
 This document details the step-by-step process of setting up and running the FastTD3 project on a personal laptop. The process involves navigating several challenges related to NVIDIA drivers, CUDA setup, conflicting Python dependencies from its environment backend humanoid-bench, and resource limitations of a non-server-grade machine.
 
 1. System & Hardware Prerequisites
-
+---
 OS: Ubuntu 20.04
 
 GPU: NVIDIA GPU (e.g., RTX series)
@@ -11,7 +11,7 @@ GPU: NVIDIA GPU (e.g., RTX series)
 Key Software: Conda for environment management.
 
 2. Environment Setup: A Tale of Two Projects
-
+---
 The core challenge is that FastTD3 (the algorithm) relies on humanoid-bench (the simulation environment), but the latter has several configuration issues. Our strategy is to set up a single, clean environment for FastTD3 and then carefully install humanoid-bench into it as a dependency.
 
 Step 2.1: NVIDIA Driver & CUDA Toolkit Installation
@@ -28,14 +28,14 @@ During installation, when prompted "Do you want to install the NVIDIA driver?", 
 
 Configure Environment Variables: Add the CUDA path to your shell configuration file (e.g., ~/.bashrc).
 
-code
-Bash
+```
 download
 content_copy
 expand_less
-
+```
+```
 nano ~/.bashrc
-
+```
 Add the following lines at the end of the file (adjust the version number if necessary):
 
 code
