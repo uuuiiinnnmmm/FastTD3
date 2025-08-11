@@ -14,7 +14,7 @@ Key Software: Conda for environment management.
 ---
 The core challenge is that FastTD3 (the algorithm) relies on humanoid-bench (the simulation environment), but the latter has several configuration issues. Our strategy is to set up a single, clean environment for FastTD3 and then carefully install humanoid-bench into it as a dependency.
 
-Step 2.1: NVIDIA Driver & CUDA Toolkit Installation
+###Step 2.1: NVIDIA Driver & CUDA Toolkit Installation
 
 A correct GPU driver and CUDA setup is the foundation for everything.
 
@@ -46,7 +46,7 @@ nvcc --version
 ```
 This command should display the version of the CUDA compiler, confirming a successful installation.
 
-Step 2.2: Creating the Master Conda Environment
+###Step 2.2: Creating the Master Conda Environment
 
 We will create a single, dedicated environment for our final goal: running FastTD3.
 
@@ -55,7 +55,7 @@ We will create a single, dedicated environment for our final goal: running FastT
 conda create -n fasttd3_hb -y python=3.10
 conda activate fasttd3_hb
 ```
-Step 2.3: Installing Dependencies (The Correct Way)
+###Step 2.3: Installing Dependencies (The Correct Way)
 
 This is the most critical part, where we navigate the dependency conflicts.
 
@@ -100,10 +100,10 @@ pip list | grep "fast-td3"
 pip list | grep "humanoid-bench"
 ```
 3. Running Experiments: Adapting to Laptop Hardware
-
+---
 The default hyperparameters in FastTD3 are tuned for a high-end NVIDIA A100 80GB GPU. Running them on a laptop will instantly cause CUDA out of memory errors or system crashes due to RAM exhaustion.
 
-Step 3.1: Finding a Stable Baseline
+###Step 3.1: Finding a Stable Baseline
 
 Your first goal is to find a set of parameters that runs without crashing. This requires drastically reducing resource consumption.
 
@@ -125,7 +125,7 @@ python fast_td3/train.py \
 
 The other parameters drastically reduce RAM (num_envs) and VRAM (buffer_size, batch_size, network dimensions) usage.
 
-Step 3.2: Systematic Tuning to Find Your Hardware's Limit
+###Step 3.2: Systematic Tuning to Find Your Hardware's Limit
 
 Once you have a stable baseline, you can systematically increase parameters to maximize performance.
 
@@ -154,7 +154,7 @@ Increase num_updates: Try 4 or 8 to improve sample efficiency.
 Introduce learning_starts: Add --learning_starts 10000 to prevent unstable early learning and catastrophic forgetting.
 
 4. Visualizing Results
-
+---
 The training_notebook.ipynb provided in the FastTD3 repo is the best tool for visualization.
 
 Address a System Proxy Bug: Jupyter Lab may fail to start if you have a system-wide proxy (e.g., for VPNs). Launch it from a clean terminal:
