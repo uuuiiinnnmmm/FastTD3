@@ -8,14 +8,14 @@ OS: Ubuntu 22.04
 
 GPU: NVIDIA GPU (e.g., RTX series)
 
-Key Software: Conda for environment management.
+Key Software: miniconda for environment management.
 
 2. Environment Setup: A Tale of Two Projects
 ---
 The core challenge is that FastTD3 (the algorithm) relies on humanoid-bench (the simulation environment), but the latter has several configuration issues. Our strategy is to set up a single, clean environment for FastTD3 and then carefully install humanoid-bench into it as a dependency.
 
 
-###Step 2.1: NVIDIA Driver & CUDA Toolkit Installation
+###Step 2.1: NVIDIA Driver & CUDA Toolkit Installation & miniconda
 
 A correct GPU driver and CUDA setup is the foundation for everything.
 
@@ -61,6 +61,12 @@ Verify CUDA Installation:
 nvcc --version
 ```
 This command should display the version of the CUDA compiler, confirming a successful installation.
+
+Then you can download and install Miniconda: Go to the Miniconda official website and download the latest bash installation script for your system (Linux x86_64).
+
+During the installation process, when prompted with “Do you wish the installer to initialize Miniconda3 by running conda init?”, enter yes.
+
+Restart the terminal: After installation is complete, close the current terminal and reopen it to apply the conda initialization. You will notice that the command prompt now includes the (base) prefix, indicating that you are in the conda base environment.
 
 ###Step 2.2: Creating the Master Conda Environment
 
