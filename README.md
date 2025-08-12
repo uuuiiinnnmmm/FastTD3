@@ -91,7 +91,6 @@ git clone https://github.com/younggyoseo/FastTD3
 cd FastTD3
 ```
 Install FastTD3's Core Dependencies FIRST: This establishes the correct versions for core libraries like PyTorch, as defined by the main project's author. We use --trusted-host to bypass potential network/SSL issues.
-
 ```
 pip install --trusted-host pypi.org --trusted-host download.pytorch.org -r requirements/requirements.txt
 ```
