@@ -48,11 +48,13 @@ nano ~/.bashrc
 Add the following lines at the end of the file (adjust the version number if necessary):
 
 ```
-export PATH=/usr/local/cuda-12.5/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda-12.9/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.9/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
-Apply the changes by running source ~/.bashrc.
-
+Apply the changes by running 
+```
+source ~/.bashrc
+```
 Verify CUDA Installation:
 
 ```
