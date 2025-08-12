@@ -23,11 +23,7 @@ Install NVIDIA Driver: Download and install a compatible driver (version 575.xx 
 So here we download and install it from PPA.
 ```
 sudo add-apt-repository ppa:graphics-drivers/ppa
-```
-```
 sudo apt update
-```
-```
 sudo apt install nvidia-driver-575
 ```
 After installation, reboot your system and verify the installation by running nvidia-smi in the terminal.
