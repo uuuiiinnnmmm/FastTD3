@@ -34,9 +34,9 @@ After installation, reboot your system and verify the installation by running nv
 ```
 sudo reboot
 ```
-Install CUDA Toolkit: Download and install the CUDA Toolkit. This guide uses CUDA 12.5.
+Install CUDA Toolkit: Download and install the CUDA Toolkit. This guide uses CUDA 12.9.
 
-Download from the NVIDIA CUDA Toolkit Archive.
+Download from the NVIDIA CUDA Toolkit Archive.（We strongly recommend that you choose deb (network).）
 
 During installation, when prompted "Do you want to install the NVIDIA driver?", select NO as you have already installed a newer driver in the previous step.
 
