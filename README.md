@@ -18,7 +18,11 @@ The core challenge is that FastTD3 (the algorithm) relies on humanoid-bench (the
 
 A correct GPU driver and CUDA setup is the foundation for everything.
 
-Install NVIDIA Driver: Download and install a compatible driver (version 525.xx or newer is recommended) from the NVIDIA Official Driver Download Page. After installation, reboot your system and verify the installation by running nvidia-smi in the terminal.
+Install NVIDIA Driver: Download and install a compatible driver (version 535.xx or newer is recommended) from the NVIDIA Official Driver Download Page. 
+```
+sudo apt install nvidia-driver-535
+```
+After installation, reboot your system and verify the installation by running nvidia-smi in the terminal.
 
 Install CUDA Toolkit: Download and install the CUDA Toolkit. This guide uses CUDA 12.5.
 
