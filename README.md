@@ -1,7 +1,8 @@
 Reproducing FastTD3 on a Laptop with Ubuntu 22.04
 ====
 This document details the step-by-step process of setting up and running the FastTD3 project on a personal laptop. The process involves navigating several challenges related to NVIDIA drivers, CUDA setup, conflicting Python dependencies from its environment backend humanoid-bench, and resource limitations of a non-server-grade machine.
-!My improvements include rewriting the setup file to resolve dependency conflicts and providing a path for testing low-end graphics cards, which is suitable for beginners in deep learning.
+
+###!My improvements include rewriting the setup file to resolve dependency conflicts and providing a path for testing low-end graphics cards, which is suitable for beginners in deep learning.
 1. System & Hardware Prerequisites
 ---
 OS: Ubuntu 22.04
