@@ -16,7 +16,7 @@ Key Software: miniconda for environment management.
 The core challenge is that FastTD3 (the algorithm) relies on humanoid-bench (the simulation environment), but the latter has several configuration issues. Our strategy is to set up a single, clean environment for FastTD3 and then carefully install humanoid-bench into it as a dependency.
 
 
-###Step 2.1: NVIDIA Driver & CUDA Toolkit Installation & miniconda
+#### Step 2.1: NVIDIA Driver & CUDA Toolkit Installation & miniconda
 
 A correct GPU driver and CUDA setup is the foundation for everything.
 
@@ -65,7 +65,7 @@ During the installation process, when prompted with “Do you wish the installer
 
 Restart the terminal: After installation is complete, close the current terminal and reopen it to apply the conda initialization. You will notice that the command prompt now includes the (base) prefix, indicating that you are in the conda base environment.
 
-###Step 2.2: Creating the Master Conda Environment
+#### Step 2.2: Creating the Master Conda Environment
 
 We will create a single, dedicated environment for our final goal: running FastTD3.
 Accept Anaconda's Terms of Service
@@ -105,8 +105,6 @@ git clone https://github.com/carlosferrazza/humanoid-bench.git
 ```
 Then, Correct humanoid-bench's setup.py
 
-# --- 优化后的核心依赖列表 ---
-# 只保留项目运行绝对必需的、通用的库，并且放宽版本限制
 core_requirements = [
     "gymnasium>=0.29.0", 
     "numpy",             
@@ -185,7 +183,7 @@ pip list | grep "humanoid-bench"
 ---
 The default hyperparameters in FastTD3 are tuned for a high-end NVIDIA A100 80GB GPU. Running them on a laptop will instantly cause CUDA out of memory errors or system crashes due to RAM exhaustion.
 
-###Step 3.1: Finding a Stable Baseline
+#### Step 3.1: Finding a Stable Baseline
 
 Your first goal is to find a set of parameters that runs without crashing. This requires drastically reducing resource consumption.
 
@@ -207,7 +205,7 @@ python fast_td3/train.py \
 
 The other parameters drastically reduce RAM (num_envs) and VRAM (buffer_size, batch_size, network dimensions) usage.
 
-###Step 3.2: Systematic Tuning to Find Your Hardware's Limit
+#### Step 3.2: Systematic Tuning to Find Your Hardware's Limit
 
 Once you have a stable baseline, you can systematically increase parameters to maximize performance.
 
